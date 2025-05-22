@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bildergalerie</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        img {
+            max-width: 80%;
+            max-height: 70vh;
+            border: 2px solid #333;
+            margin-bottom: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>Entwicklung des Juden</h1>
+    <img id="bild" src="bild1.jpg" alt="Bild 1">
+    <button onclick="bildWechseln()">Nächstes Bild</button>
+
+    <script>
+        // Liste der Bilder
+        const bilder = ["bild1.jpg", "bild2.jpg", "bild3.jpg"];
+        let aktuellerIndex = 0;
+
+        function bildWechseln() {
+            aktuellerIndex = (aktuellerIndex + 1) % bilder.length;
+            document.getElementById("bild").src = bilder[aktuellerIndex];
+        }
+    </script>
+</body>
+</html>
